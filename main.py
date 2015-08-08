@@ -16,7 +16,7 @@ def html_to_workbook(html_text):
     :param html_text: Raw html table.
     :return: openpyxl.Workbook object
     """
-    tables = bs(html_text).findAll('table')
+    tables = BeautifulSoup(html_text).findAll('table')
     wb = openpyxl.Workbook()
     for table_index in range(len(tables)):
         if table_index == 0:
