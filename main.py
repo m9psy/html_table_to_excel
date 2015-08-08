@@ -45,7 +45,9 @@ def html_to_workbook(html_text):
                     ws.merge_cells(start_row=row_index + 1, start_column=column_seeker[row_index] - colspan + 1,
                                    end_row=row_index + rowspan, end_column=column_seeker[row_index])
                 try:
-                    result = int(cols[col_index].getText())
+                    result = float(cols[col_index].getText())
+                    if result.is_integer():
+                        result = int(cols[col_index].getText())
                 except ValueError:
                     result = cols[col_index].getText()
                 finally:
