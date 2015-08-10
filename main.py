@@ -8,6 +8,7 @@ __author__ = 'Dmitriy Emelianov'
 
 import openpyxl
 from bs4 import BeautifulSoup
+from docx import Document
 
 
 def html_to_workbook(html_text):
